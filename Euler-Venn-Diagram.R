@@ -13,15 +13,15 @@ library(venn)
 # ЧАСТЬ-2. рисуем розу-диаграмму Эйлера-Венна 3 случая. 
 # в каждом случае 2 шага: 1) создаем лист значений из датафрема. 2) чертим розу-диаграмму с помощью команды venn :  
 
-	# вариант-1. диаграмма Эйлера-Венна по классам морфологии и тект. плитам 
+	# вариант-1. диаграмма Эйлера-Венна по классам морфологии и тект. плитам (7 лепестков)
 	x <- list(Philippine = MDF$plate_phill, Pacific = MDF$plate_pacif, Mariana = MDF$plate_maria, Caroline = MDF$plate_carol, Aspect = MDF$aspect_class, Morphology = MDF$morph_class, Slope = MDF$slope_class)
 	venn(x, ilabels = TRUE, col = "navyblue", zcolor = "style")
 
-	# вариант-2. диаграмма Эйлера-Венна по плитам (что общего среди 4-х плит)
+	# вариант-2. диаграмма Эйлера-Венна по тект. плитам (4 лепестка)
 	xp <- list(Philippine = MDF$plate_phill, Pacific = MDF$plate_pacif, Mariana = MDF$plate_maria, Caroline = MDF$plate_carol)
 	venn(xp, ilabels = TRUE, ellipse = TRUE, col = "navyblue", zcolor = "style")
 
-	# вариант-3. диаграмма Эйлера-Венна по геоморфологическим параметрам
+	# вариант-3. диаграмма Эйлера-Венна по разным геоморфологическим параметрам (6 лепестков)
 	x3 <- list(Depth = MDF$Min, Volcanoles = MDF$igneous_volc, Sediments = MDF$sedim_thick, Angle = MDF$slope_angle, Hillshade = MDF$hillshade, Aspect = MDF$aspect_degree)
 	venn(x3, ilabels = TRUE, col = "navyblue", zcolor = "style")
 
